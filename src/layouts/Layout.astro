@@ -2,7 +2,6 @@
 import "../styles/global.css";
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,25 +9,199 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Ridhwan</title>
   </head>
-  <body>
+  <body class="bg-black text-[#878b89] m-0 p-0 font-helvetica">
+    <button id="nav-toggle" class="fixed top-[2.85rem] left-8 w-4 h-4 bg-[#878b89] z-50 cursor-pointer border-none transition-all duration-500 ease-in-out" style="border-radius: 50%;">
+    </button>
+    <header class="p-8 flex flex-row justify-end items-start">
+      <nav id="main-nav" class="flex flex-col absolute left-[10%] top-8 w-[80%] items-start gap-[0.02rem] transition-all duration-500 ease-in-out">
+        <a href="/blog" class="nav-link no-underline text-[#878b89] text-[2rem] py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">Blog</a>
+        <a href="/about" class="nav-link no-underline text-[#878b89] text-[2rem] py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">About</a>
+        <a href="/contact" class="nav-link no-underline text-[#878b89] text-[2rem] py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">Contact</a>
+      </nav>
+    </header>
+    <main class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <p class="text-[#878b89] text-[1.1rem] m-0 tracking-[-0.02em] font-light">Nothing yet</p>
+    </main>
     <slot />
+    <footer class="fixed bottom-4 left-0 w-full text-center">
+      <p class="text-[#878b89] text-xs m-0 font-light">© Ridhwan Zaman</p>
+    </footer>
   </body>
 </html>
 
 <style is:global>
   @font-face {
-    font-family: "Sohne Leicht";
-    src: url("/fonts/SohneLeicht.otf") format("opentype");
-    font-weight: normal;
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueUltraLight.otf") format("opentype");
+    font-weight: 100;
     font-style: normal;
     font-display: swap;
   }
 
-  body {
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueUltraLightItalic.otf") format("opentype");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueThin.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueThinItalic.otf") format("opentype");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueLight.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueLightItalic.otf") format("opentype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueRoman.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueItalic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueMedium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueMediumItalic.otf") format("opentype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueBold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueBoldItalic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueHeavy.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueHeavyItalic.otf") format("opentype");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueBlack.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueBlackItalic.otf") format("opentype");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  .font-helvetica {
     font-family:
-      "Sohne Leicht",
+      "Helvetica Neue",
       -apple-system,
       BlinkMacSystemFont,
       sans-serif;
   }
+
+  .nav-link {
+    transition: all 0.6s ease;
+  }
+
+  .nav-link:hover {
+    background-color: red;
+    color: white;
+    padding-left: 0.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .nav-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+  }
 </style>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('main-nav');
+  let isVisible = true;
+
+  toggle?.addEventListener('click', () => {
+    isVisible = !isVisible;
+
+    if (isVisible) {
+      nav?.classList.remove('nav-hidden');
+      if (toggle) {
+        toggle.style.borderRadius = '50%';
+      }
+    } else {
+      nav?.classList.add('nav-hidden');
+      if (toggle) {
+        toggle.style.borderRadius = '0%';
+      }
+    }
+  });
+</script>
