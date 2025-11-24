@@ -1,5 +1,11 @@
 ---
 import "../styles/global.css";
+
+interface Props {
+  hideDefaultContent?: boolean;
+}
+
+const { hideDefaultContent = false } = Astro.props;
 ---
 
 <html lang="en">
@@ -23,9 +29,11 @@ import "../styles/global.css";
         <a href="/contact" class="nav-link no-underline text-[#878b89] text-[2rem] py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">Contact</a>
       </nav>
     </header>
-    <main class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <p class="text-[#878b89] text-[1.1rem] m-0 tracking-[-0.02em] font-light">Nothing yet</p>
-    </main>
+    {!hideDefaultContent && (
+      <main class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <p class="text-[#878b89] text-[1.1rem] m-0 tracking-[-0.02em] font-light">Nothing yet</p>
+      </main>
+    )}
     <slot />
     <footer class="fixed bottom-4 left-0 w-full text-center">
       <p class="text-[#878b89] text-xs m-0 font-light">© Ridhwan Zaman</p>

@@ -1,10 +1,10 @@
 # crepe
 
-Crepe is a nick-name for my personal portfolio website, view updates and more in this repo
+Crepe is the name of my blog website, see code changes in this repo
 
-## Contribution
+## Why crepes?
 
-No plans for contribution.
+Because they're delicious. (I mean [look](https://stock.adobe.com/search?k=crepes) at them)
 
 ## License
 
