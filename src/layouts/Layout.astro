@@ -20,13 +20,13 @@ const { hideDefaultContent = false } = Astro.props;
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
   </head>
   <body class="bg-black text-[#878b89] m-0 p-0 font-helvetica">
-    <button id="nav-toggle" class="fixed top-[2.85rem] left-8 w-4 h-4 bg-[#878b89] z-50 cursor-pointer border-none transition-all duration-500 ease-in-out" style="border-radius: 50%;">
+    <button id="nav-toggle" class="hidden sm:block fixed sm:top-[2.85rem] sm:left-8 sm:w-4 sm:h-4 bg-[#878b89] z-50 cursor-pointer border-none transition-all duration-500 ease-in-out" style="border-radius: 50%;" aria-label="Toggle navigation">
     </button>
-    <header class="p-8 flex flex-row justify-end items-start">
-      <nav id="main-nav" class="flex flex-col absolute left-[10%] top-8 w-[80%] items-start gap-[0.02rem] transition-all duration-500 ease-in-out">
-        <a href="/blog" class="nav-link no-underline text-[#878b89] text-[2rem] py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">Blog</a>
-        <a href="/about" class="nav-link no-underline text-[#878b89] text-[2rem] py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">About</a>
-        <a href="/contact" class="nav-link no-underline text-[#878b89] text-[2rem] py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">Contact</a>
+    <header class="p-4 sm:p-8 flex flex-row justify-end items-start">
+      <nav id="main-nav" class="flex flex-col absolute left-[5%] sm:left-[10%] top-4 sm:top-8 w-[90%] sm:w-[80%] items-start gap-[0.02rem] transition-all duration-500 ease-in-out">
+        <a href="/blog" class="nav-link no-underline text-[#878b89] text-[1.5rem] sm:text-[2rem] py-[0.3rem] sm:py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">Blog</a>
+        <a href="/about" class="nav-link no-underline text-[#878b89] text-[1.5rem] sm:text-[2rem] py-[0.3rem] sm:py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">About</a>
+        <a href="/contact" class="nav-link no-underline text-[#878b89] text-[1.5rem] sm:text-[2rem] py-[0.3rem] sm:py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">Contact</a>
       </nav>
     </header>
     {!hideDefaultContent && (
@@ -178,15 +178,17 @@ const { hideDefaultContent = false } = Astro.props;
       sans-serif;
   }
 
-  .nav-link {
-    transition: all 0.6s ease;
-  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav-link {
+      transition: all 0.6s ease;
+    }
 
-  .nav-link:hover {
-    background-color: red;
-    color: white;
-    padding-left: 0.5rem;
-    transition: all 0.2s ease;
+    .nav-link:hover {
+      background-color: red;
+      color: white;
+      padding-left: 0.5rem;
+      transition: all 0.2s ease;
+    }
   }
 
   .nav-hidden {
@@ -201,7 +203,11 @@ const { hideDefaultContent = false } = Astro.props;
   const nav = document.getElementById('main-nav');
   let isVisible = true;
 
+  const checkMobile = () => window.innerWidth < 640;
+
   toggle?.addEventListener('click', () => {
+    if (checkMobile()) return;
+
     isVisible = !isVisible;
 
     if (isVisible) {
@@ -216,4 +222,14 @@ const { hideDefaultContent = false } = Astro.props;
       }
     }
   });
+
+  window.addEventListener('resize', () => {
+    if (checkMobile()) {
+      nav?.classList.remove('nav-hidden');
+    }
+  });
+
+  if (checkMobile()) {
+    nav?.classList.remove('nav-hidden');
+  }
 </script>

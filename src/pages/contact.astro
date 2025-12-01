@@ -3,29 +3,29 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout hideDefaultContent={true}>
-  <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-8 w-full max-w-md px-8">
-    <a href="mailto:contact@ridhwanzaman.me" class="text-[#878b89] text-[1.1rem] font-light tracking-[-0.02em] no-underline hover:text-white transition-colors duration-300">
+  <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-6 sm:gap-8 w-full max-w-md px-4 sm:px-8">
+    <a href="mailto:contact@ridhwanzaman.me" class="contact-link text-[#878b89] text-[1rem] sm:text-[1.1rem] font-light tracking-[-0.02em] no-underline transition-colors duration-300">
       contact@ridhwanzaman.me
     </a>
 
     <div class="w-full flex flex-col gap-4">
       <div class="w-full">
-        <button id="pgp-toggle" class="w-full text-[#878b89] text-[0.9rem] font-light tracking-[-0.02em] text-left pb-1 border-b border-[#878b89] cursor-pointer bg-transparent transition-all duration-300 hover:text-white hover:border-white">
+        <button id="pgp-toggle" class="contact-button w-full text-[#878b89] text-[0.85rem] sm:text-[0.9rem] font-light tracking-[-0.02em] text-left pb-2 sm:pb-1 border-b border-[#878b89] cursor-pointer bg-transparent transition-all duration-300 touch-manipulation">
           PGP
         </button>
         <div id="pgp-content" class="overflow-hidden" style="max-height: 0; opacity: 0; transition: max-height 600ms ease, opacity 600ms ease;">
-          <a href="/keys/Ridhwan Zaman (E23AFF33) Public.asc" download class="block text-[#878b89] text-[1rem] font-light tracking-[-0.02em] no-underline pt-4 hover:text-white transition-colors duration-300">
+          <a href="/keys/Ridhwan Zaman (E23AFF33) Public.asc" download class="contact-link block text-[#878b89] text-[0.9rem] sm:text-[1rem] font-light tracking-[-0.02em] no-underline pt-4 transition-colors duration-300">
             Download
           </a>
         </div>
       </div>
 
       <div class="w-full">
-        <button id="encrypted-toggle" class="w-full text-[#878b89] text-[0.9rem] font-light tracking-[-0.02em] text-left pb-1 border-b border-[#878b89] cursor-pointer bg-transparent transition-all duration-300 hover:text-white hover:border-white">
+        <button id="encrypted-toggle" class="contact-button w-full text-[#878b89] text-[0.85rem] sm:text-[0.9rem] font-light tracking-[-0.02em] text-left pb-2 sm:pb-1 border-b border-[#878b89] cursor-pointer bg-transparent transition-all duration-300 touch-manipulation">
           Tutamail
         </button>
         <div id="encrypted-email" style="opacity: 0; transform: translateY(-5px); transition: opacity 600ms ease, transform 600ms ease; pointer-events: none;">
-          <a href="mailto:ridhwanzaman@tutamail.com" class="block text-[#878b89] text-[1rem] font-light tracking-[-0.02em] no-underline pt-4 hover:text-white transition-colors duration-300">
+          <a href="mailto:ridhwanzaman@tutamail.com" class="contact-link block text-[#878b89] text-[0.9rem] sm:text-[1rem] font-light tracking-[-0.02em] no-underline pt-4 transition-colors duration-300">
             ridhwanzaman@tutamail.com
           </a>
         </div>
@@ -33,6 +33,19 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
 </Layout>
+
+<style>
+  @media (hover: hover) and (pointer: fine) {
+    .contact-link:hover {
+      color: white;
+    }
+
+    .contact-button:hover {
+      color: white;
+      border-color: white;
+    }
+  }
+</style>
 
 <script>
   const pgpToggle = document.getElementById('pgp-toggle');
