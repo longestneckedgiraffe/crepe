@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
   hideDefaultContent?: boolean;
@@ -18,13 +19,14 @@ const { hideDefaultContent = false } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <ViewTransitions />
   </head>
   <body class="bg-black text-[#878b89] m-0 p-0 font-helvetica">
-    <header class="p-4 sm:p-8 flex flex-row justify-end items-start">
-      <nav id="main-nav" class="flex flex-col absolute left-[5%] sm:left-[10%] top-4 sm:top-8 w-[90%] sm:w-[80%] items-start gap-[0.02rem] transition-all duration-500 ease-in-out">
-        <a href="/blog" class="nav-link no-underline text-[#878b89] text-[1.5rem] sm:text-[2rem] py-[0.3rem] sm:py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">Blog</a>
-        <a href="/about" class="nav-link no-underline text-[#878b89] text-[1.5rem] sm:text-[2rem] py-[0.3rem] sm:py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">About</a>
-        <a href="/contact" class="nav-link no-underline text-[#878b89] text-[1.5rem] sm:text-[2rem] py-[0.3rem] sm:py-[0.15rem] border-b border-[#878b89] w-full tracking-[-0.02em] relative">Contact</a>
+    <header class="p-4 sm:p-8 flex flex-row items-start">
+      <nav id="main-nav" class="flex flex-col items-start gap-1">
+        <a href="/blog" class="nav-link no-underline text-[#878b89] text-[1.1rem] tracking-[-0.02em] font-light">Blog</a>
+        <a href="/about" class="nav-link no-underline text-[#878b89] text-[1.1rem] tracking-[-0.02em] font-light">About</a>
+        <a href="/contact" class="nav-link no-underline text-[#878b89] text-[1.1rem] tracking-[-0.02em] font-light">Contact</a>
       </nav>
     </header>
     {!hideDefaultContent && (
@@ -182,7 +184,6 @@ const { hideDefaultContent = false } = Astro.props;
     }
 
     .nav-link:hover {
-      background-color: red;
       color: white;
       padding-left: 0.5rem;
       transition: all 0.2s ease;

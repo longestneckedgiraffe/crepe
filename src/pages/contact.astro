@@ -7,30 +7,6 @@ import Layout from "../layouts/Layout.astro";
     <a href="mailto:contact@ridhwanzaman.me" class="contact-link text-[#878b89] text-[1rem] sm:text-[1.1rem] font-light tracking-[-0.02em] no-underline transition-colors duration-300">
       contact@ridhwanzaman.me
     </a>
-
-    <div class="w-full flex flex-col gap-4">
-      <div class="w-full">
-        <button id="pgp-toggle" class="contact-button w-full text-[#878b89] text-[0.85rem] sm:text-[0.9rem] font-light tracking-[-0.02em] text-left pb-2 sm:pb-1 border-b border-[#878b89] cursor-pointer bg-transparent transition-all duration-300 touch-manipulation">
-          PGP
-        </button>
-        <div id="pgp-content" class="overflow-hidden" style="max-height: 0; opacity: 0; transition: max-height 600ms ease, opacity 600ms ease;">
-          <a href="/keys/Ridhwan Zaman (E23AFF33) Public.asc" download class="contact-link block text-[#878b89] text-[0.9rem] sm:text-[1rem] font-light tracking-[-0.02em] no-underline pt-4 transition-colors duration-300">
-            Download
-          </a>
-        </div>
-      </div>
-
-      <div class="w-full">
-        <button id="encrypted-toggle" class="contact-button w-full text-[#878b89] text-[0.85rem] sm:text-[0.9rem] font-light tracking-[-0.02em] text-left pb-2 sm:pb-1 border-b border-[#878b89] cursor-pointer bg-transparent transition-all duration-300 touch-manipulation">
-          Tutamail
-        </button>
-        <div id="encrypted-email" style="opacity: 0; transform: translateY(-5px); transition: opacity 600ms ease, transform 600ms ease; pointer-events: none;">
-          <a href="mailto:ridhwanzaman@tutamail.com" class="contact-link block text-[#878b89] text-[0.9rem] sm:text-[1rem] font-light tracking-[-0.02em] no-underline pt-4 transition-colors duration-300">
-            ridhwanzaman@tutamail.com
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 </Layout>
 
@@ -39,54 +15,5 @@ import Layout from "../layouts/Layout.astro";
     .contact-link:hover {
       color: white;
     }
-
-    .contact-button:hover {
-      color: white;
-      border-color: white;
-    }
   }
 </style>
-
-<script>
-  const pgpToggle = document.getElementById('pgp-toggle');
-  const pgpContent = document.getElementById('pgp-content');
-  let isPgpOpen = false;
-
-  pgpToggle?.addEventListener('click', () => {
-    isPgpOpen = !isPgpOpen;
-
-    if (isPgpOpen) {
-      if (pgpContent) {
-        pgpContent.style.maxHeight = '100px';
-        pgpContent.style.opacity = '1';
-      }
-    } else {
-      if (pgpContent) {
-        pgpContent.style.maxHeight = '0';
-        pgpContent.style.opacity = '0';
-      }
-    }
-  });
-
-  const toggleBtn = document.getElementById('encrypted-toggle');
-  const emailDiv = document.getElementById('encrypted-email');
-  let isOpen = false;
-
-  toggleBtn?.addEventListener('click', () => {
-    isOpen = !isOpen;
-
-    if (isOpen) {
-      if (emailDiv) {
-        emailDiv.style.opacity = '1';
-        emailDiv.style.transform = 'translateY(0)';
-        emailDiv.style.pointerEvents = 'auto';
-      }
-    } else {
-      if (emailDiv) {
-        emailDiv.style.opacity = '0';
-        emailDiv.style.transform = 'translateY(-5px)';
-        emailDiv.style.pointerEvents = 'none';
-      }
-    }
-  });
-</script>
