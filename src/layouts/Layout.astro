@@ -22,7 +22,7 @@ const { hideDefaultContent = false } = Astro.props;
     <ViewTransitions />
   </head>
   <body class="bg-black text-[#878b89] m-0 p-0 font-helvetica">
-    <header class="p-4 sm:p-8 flex flex-row items-start">
+    <header class="p-4 sm:p-8 flex flex-row items-start" transition:persist transition:animate="none">
       <nav id="main-nav" class="flex flex-col items-start gap-1">
         <a href="/blog" class="nav-link no-underline text-[#878b89] text-[1.1rem] tracking-[-0.02em] font-light">Blog</a>
         <a href="/about" class="nav-link no-underline text-[#878b89] text-[1.1rem] tracking-[-0.02em] font-light">About</a>
@@ -35,7 +35,7 @@ const { hideDefaultContent = false } = Astro.props;
       </main>
     )}
     <slot />
-    <footer class="fixed bottom-4 left-0 w-full text-center">
+    <footer class="fixed bottom-4 left-0 w-full text-center" transition:persist transition:animate="none">
       <p class="text-[#878b89] text-xs m-0 font-light">© Ridhwan Zaman</p>
     </footer>
   </body>
