@@ -1,12 +1,6 @@
 ---
 import "../styles/global.css";
 import { ViewTransitions } from 'astro:transitions';
-
-interface Props {
-  hideDefaultContent?: boolean;
-}
-
-const { hideDefaultContent = false } = Astro.props;
 ---
 
 <html lang="en">
@@ -21,21 +15,11 @@ const { hideDefaultContent = false } = Astro.props;
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <ViewTransitions />
   </head>
-  <body class="bg-black text-[#878b89] m-0 p-0 font-helvetica">
-    <header class="p-4 sm:p-8 flex flex-row items-start" transition:persist transition:animate="none">
-      <nav id="main-nav" class="flex flex-col items-start gap-1">
-        <a href="/blog" class="nav-link no-underline text-[#878b89] text-[1.1rem] tracking-[-0.02em] font-light">Blog</a>
-        <a href="/about" class="nav-link no-underline text-[#878b89] text-[1.1rem] tracking-[-0.02em] font-light">About</a>
-        <a href="/contact" class="nav-link no-underline text-[#878b89] text-[1.1rem] tracking-[-0.02em] font-light">Contact</a>
-      </nav>
-    </header>
-    {!hideDefaultContent && (
-      <main class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <p class="text-[#878b89] text-[1.1rem] m-0 tracking-[-0.02em] font-light">Nothing yet</p>
-      </main>
-    )}
-    <slot />
-    <footer class="fixed bottom-4 left-0 w-full text-center" transition:persist transition:animate="none">
+  <body class="bg-black text-[#878b89] m-0 font-helvetica min-h-screen">
+    <main class="p-4 sm:p-8">
+      <slot />
+    </main>
+    <footer class="fixed bottom-4 left-0 w-full text-center">
       <p class="text-[#878b89] text-xs m-0 font-light">© Ridhwan Zaman</p>
     </footer>
   </body>
