@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+const year = new Date().getFullYear();
+---
+
+<Layout>
+  <div class="min-h-screen flex flex-col items-center justify-center -mt-16">
+    <a href="https://ridhwanzaman.me" class="transition-opacity duration-200 hover:opacity-60">
+      <img src="/ridhwan.svg" alt="ridhwan" class="w-lg" />
+    </a>
+    <div class="flex gap-3 mt-8 w-xl justify-between">
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+      <div class="w-1.5 h-1.5 bg-black"></div>
+    </div>
+    <a href="mailto:contact@ridhwanzaman.me" class="mt-8 transition-colors duration-200 hover:text-gray-500" style="font-family: 'Input Sans', sans-serif;">contact@ridhwanzaman.me</a>
+  </div>
+  <footer class="fixed bottom-4 w-full text-center text-sm" style="font-family: 'Input Sans', sans-serif;">
+    <p>© {year} Ridhwan Zaman</p>
+  </footer>
+</Layout>

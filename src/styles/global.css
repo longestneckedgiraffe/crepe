@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Input Sans";
+  src: url("/fonts/InputSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
